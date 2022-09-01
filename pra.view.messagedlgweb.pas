@@ -28,8 +28,8 @@ type
     imgMessage: TImage;
     imList: TImageList;
     lbMessage: TLabel;
-    lbText: TLabel;
     pnBotao: TPanel;
+    lbText: TMemo;
     procedure FormCreate(Sender: TObject);
     procedure OKSimOnClick(Value: TObject);
     procedure NaoOnClick(Value: TObject);
