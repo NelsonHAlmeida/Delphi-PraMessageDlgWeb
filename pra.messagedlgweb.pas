@@ -70,7 +70,7 @@ function TPraMessageDlgWeb.ShowMessageDlg(const pText: String): Boolean;
 begin
   FFormBack.Parent := Application.MainForm;
   FFormBack.Show;
-  FFormMessage.lbText.Caption := pText;
+  FFormMessage.lbText.Lines.Text := pText;
   result := FFormMessage.ShowModal = mrOk;
 end;
 
@@ -93,25 +93,36 @@ begin
   with result do
   begin
     parent := FFormMessage.pnBotao;
-//    Top := 28;
-    Top := (parent.Height - Height) div 2;
     Height := 36;
+    Top := (parent.Height - Height) div 2;
     Cursor := crHandPoint;
     Pen.Style := psClear;
     Font.Charset := DEFAULT_CHARSET;
     Font.Height := -19;
-    Font.Name := 'Tahoma';
+    Font.Name := 'Segoe UI';
     Font.Style := [];
     FontFocused.Charset := DEFAULT_CHARSET;
     FontFocused.Height := -19;
-    FontFocused.Name := 'Tahoma';
+    FontFocused.Name := 'Segoe UI';
     FontFocused.Style := [];
     FontDown.Charset := DEFAULT_CHARSET;
     FontDown.Height := -19;
-    FontDown.Name := 'Tahoma';
+    FontDown.Name := 'Segoe UI';
     FontDown.Style := [];
 
-    TabStop := True;
+    Brush.Color := $00AAAAAA;
+    BrushFocused.Color := $00989898;
+    BrushDown.Color := $00AAAAAA;
+
+    Pen.Color := $808080;
+    Pen.Width := 1;
+    PenFocused.Color := $808080;
+    PenFocused.Width := 3;
+    PenDown.Color := $808080;
+    PenDown.Width := 3;
+
+//    TabStop := True;
+    TabStop := False;
   end;
 end;
 
@@ -122,17 +133,17 @@ begin
 //    Left := 222;
     Width := 92;
     Left := (parent.Width - 190) div 2;
-    Brush.Color := $00AAAAAA;
-    BrushFocused.Color := $00989898;
-    BrushDown.Color := $00AAAAAA;
-    Pen.Style := psClear;
-    PenFocused.Width := 3;
-    PenFocused.Color := $00D1B27F;
+//    Brush.Color := $00AAAAAA;
+//    BrushFocused.Color := $00989898;
+//    BrushDown.Color := $00AAAAAA;
+//    Pen.Style := psClear;
+//    PenFocused.Width := 3;
+//    PenFocused.Color := $00D1B27F;
+//    PenDown.Width := 3;
+//    PenDown.Color := $00D1B27F;
     Font.Color := clWhite;
     FontFocused.Color := clWhite;
     FontDown.Color := clWhite;
-    PenDown.Width := 3;
-    PenDown.Color := $00D1B27F;
     Caption := 'Não';
     TabOrder := 0;
     onClick := FFormMessage.NaoOnClick;
@@ -146,22 +157,17 @@ begin
 //    Left := 254;
     Width := 92;
     Left := (parent.Width - Width) div 2;
-
-    Brush.Color := 13991740;
-    BrushFocused.Color := 13136427;
-    BrushDown.Color := 13136427;
-
-    Pen.Color := 13395456;
-    PenFocused.Color := 13395456;
-    PenFocused.Width := 3;
-
-    PenDown.Color := 13395456;
-    PenDown.Width := 3;
-
+//    Brush.Color := 13991740;
+//    BrushFocused.Color := 13136427;
+//    BrushDown.Color := 13136427;
+//    Pen.Color := 13395456;
+//    PenFocused.Color := 13395456;
+//    PenFocused.Width := 3;
+//    PenDown.Color := 13395456;
+//    PenDown.Width := 3;
     Font.Color := clWhite;
     FontFocused.Color := clWhite;
     FontDown.Color := clWhite;
-
     Caption := 'OK';
     TabOrder := 0;
     onClick := FFormMessage.OKSimOnClick;
@@ -173,24 +179,18 @@ begin
   with CreateButton do
   begin
     Width := 92;
-//    Left := (parent.Width - ) div 2;
     Left := 203;
-
     Brush.Color := 13991740;
     BrushFocused.Color := 13136427;
     BrushDown.Color := 13991740;
-
     Pen.Color := 13395456;
     PenFocused.Color := 13395456;
     PenFocused.Width := 3;
-
     PenDown.Color := 13395456;
     PenDown.Width := 3;
     FontDown.Color := clWhite;
-
     Font.Color := clWhite;
     FontFocused.Color := clWhite;
-
     Caption := 'Sim';
     TabOrder := 1;
     onClick := FFormMessage.OKSimOnClick;

@@ -4,7 +4,7 @@ object FPraViewMessageDlgWeb: TFPraViewMessageDlgWeb
   BorderIcons = []
   BorderStyle = bsNone
   Caption = 'FPraViewMessageDlgWeb'
-  ClientHeight = 215
+  ClientHeight = 233
   ClientWidth = 400
   Color = clWhite
   Constraints.MinHeight = 200
@@ -47,38 +47,35 @@ object FPraViewMessageDlgWeb: TFPraViewMessageDlgWeb
     Font.Name = 'Verdana'
     Font.Style = [fsBold]
     ParentFont = False
-    ExplicitTop = 105
     ExplicitWidth = 7
-  end
-  object lbText: TLabel
-    AlignWithMargins = True
-    Left = 3
-    Top = 125
-    Width = 394
-    Height = 16
-    Margins.Top = 5
-    Align = alTop
-    Alignment = taCenter
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = 5855577
-    Font.Height = -13
-    Font.Name = 'Verdana'
-    Font.Style = []
-    ParentFont = False
-    ExplicitTop = 214
-    ExplicitWidth = 5
   end
   object pnBotao: TPanel
     Left = 0
-    Top = 147
+    Top = 188
     Width = 400
-    Height = 68
+    Height = 45
     Align = alBottom
     BevelOuter = bvNone
     TabOrder = 0
-    ExplicitLeft = -8
-    ExplicitTop = 208
-    ExplicitWidth = 600
+    ExplicitTop = 176
+  end
+  object lbText: TMemo
+    Left = 0
+    Top = 120
+    Width = 400
+    Height = 68
+    Align = alClient
+    Alignment = taCenter
+    BevelOuter = bvNone
+    BorderStyle = bsNone
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = 5855577
+    Font.Height = -13
+    Font.Name = 'Segoe UI'
+    Font.Style = [fsBold]
+    ParentFont = False
+    ReadOnly = True
+    TabOrder = 1
   end
   object imList: TImageList
     ColorDepth = cd32Bit
